@@ -27,10 +27,7 @@ namespace WebAppAdmin.Restaurant_Manage
             {
                 Response.Redirect("../User_Manage/Login.aspx", false);
             }
-            else
-            {
-               // Grv_Bind();
-            }
+            username.Text = (String)Session["uname"];
         }
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)

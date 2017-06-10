@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="WebAppAdmin.Category_Manage.Manage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="WebAppAdmin.User_Manage.Manage" %>
 
 <!DOCTYPE html>
 

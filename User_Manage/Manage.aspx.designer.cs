@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppAdmin.Category_Manage {
+namespace WebAppAdmin.User_Manage {
     
     
     public partial class Manage {
@@ -19,7 +19,7 @@ namespace WebAppAdmin.Category_Manage {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username1;
+        protected global::System.Web.UI.WebControls.Label username;
         
         /// <summary>
         /// form1 control.

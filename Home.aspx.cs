@@ -53,13 +53,14 @@ namespace WebAppAdmin
             }
             if (reader.HasRows)
             {
+                //username.Text = Session["uname"];
                 Session["uname"] = name;
                 Response.BufferOutput = true;
                 username.Text = name;
             }
             else
             {
-                username.Text = "nada";
+                //username.Text = "nada";
             }
             reader.Close();
             conn.Close();

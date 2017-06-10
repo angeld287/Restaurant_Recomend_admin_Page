@@ -16,6 +16,8 @@ namespace WebAppAdmin.User_Manage
             {
                 Response.Redirect("Login.aspx", false);
             }
+            
+            username.Text = (String)Session["uname"];
         }
     }
 }

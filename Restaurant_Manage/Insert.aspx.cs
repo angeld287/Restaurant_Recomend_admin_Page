@@ -24,7 +24,7 @@ namespace WebAppAdmin.Restaurant_Manage
             {
                 Response.Redirect("../User_Manage/Login.aspx", false);
             }
-
+            username.Text = (String)Session["uname"];
             if (!this.IsPostBack)
             {
                 string constr = ConfigurationManager.ConnectionStrings["WebAppConnString"].ConnectionString;
@@ -49,14 +49,19 @@ namespace WebAppAdmin.Restaurant_Manage
 
         protected void Insert_Restaurant(object sender, EventArgs e)
         {
-            
+            if (name.Text == "" || mapzoom.Text == "" || phone_number.Text == "" || address.Text == "" || latitude.Text == "" || length.Text == "" || Category_data.Text == "")
+            {
+                validator.Text = "Hay algun campo bacio";
+            }
+            else
+            {
                 String connString = System.Configuration.ConfigurationManager.ConnectionStrings["WebAppConnString"].ToString();
                 conn = new MySql.Data.MySqlClient.MySqlConnection(connString);
 
                 conn.Open();
                 query = "";
                 query = "INSERT INTO restaurant (name, latitude, length, rating, category, phone_number, mapzoom, address) " +
-                    "values('" + name.Text + "','" + latitude.Text + "', '" + length.Text + "','0','" + Category_data.Text + 
+                    "values('" + name.Text + "','" + latitude.Text + "', '" + length.Text + "','0','" + Category_data.Text +
                     "','" + phone_number.Text + "','" + mapzoom.Text + "','" + address.Text + "')";
                 cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn);
 
@@ -66,6 +71,7 @@ namespace WebAppAdmin.Restaurant_Manage
                 conn.Close();
 
                 Response.Redirect("view.aspx", false);
+            }
             
         }
 

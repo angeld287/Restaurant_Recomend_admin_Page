@@ -146,6 +146,7 @@
                     <small id="emailHelp" class="form-text text-muted">Este campo se completa automaticamente al seleccionar la ubicacion en el mapa.</small>
                  </div>
                 <asp:Button ID="InsertBtn" Text="Ingresar" runat="server" OnClick="Insert_Restaurant" CssClass="btn btn-primary"/>
+                <asp:Label ID="validator" runat="server" Text=""></asp:Label>
             </div>
         </form>
 

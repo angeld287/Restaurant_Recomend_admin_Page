@@ -28,7 +28,15 @@
         //    alert(data);
         //});
 
-        var locations = ['Centro Médico Hispánico, Calle Marginal Santo Domingo Este 11506', 'Antojitos Premium, Calle Rosa Blanca Santo Domingo Este 11506'];
+        var locations = ['Centro Médico Hispánico, Calle Marginal Santo Domingo Este 11506',
+                            'Súper Chimi El Patricio Av. San Vicente de Paúl Santo Domingo Este 11504',
+                            'Pk Pollos Calle Marginal Santo Domingo Este 11506',
+                            'DW EL Mago Drink Billar Santo Domingo Este 11506',
+                            'Helados Bon Av San Vicente de Paúl Santo Domingo Este 11504',
+                            'Súper Chimi El Patricio Av. San Vicente de Paúl Santo Domingo Este 11504',
+                            'k.delicias Premium Santo Domingo Este 11604',
+                            'Dominos Calle 26 Santo Domingo Este 11605',
+                            'Karbón Y Leña Calle 19 esq. Aut. de San Isidro Marginal Norte 22'];
         var geocoder;
         var map;
         var bounds = new google.maps.LatLngBounds();

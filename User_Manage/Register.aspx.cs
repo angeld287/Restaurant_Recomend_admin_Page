@@ -21,6 +21,7 @@ namespace WebAppAdmin
             {
                 Response.Redirect("Login.aspx", false);
             }
+            username.Text = (String)Session["uname"];
         }
 
         protected Boolean validateUserDuplicate(object sender, EventArgs e)
@@ -51,21 +52,28 @@ namespace WebAppAdmin
 
         protected void RegisterUser(object sender, EventArgs e)
         {
-            if (validateUserDuplicate(sender, e))
+            if (name.Text == "" || password.Text == "")
             {
-                String connString = System.Configuration.ConfigurationManager.ConnectionStrings["WebAppConnString"].ToString();
-                conn = new MySql.Data.MySqlClient.MySqlConnection(connString);
-                conn.Open();
-                query = "";
-                query = "INSERT INTO adm_users_table (name, password) values('" + name.Text + "','" + password.Text + "')";
-                cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn);
+                validation.Text = "Hay algun campo bacio";
+            }
+            else
+            {
+                if (validateUserDuplicate(sender, e))
+                {
+                    String connString = System.Configuration.ConfigurationManager.ConnectionStrings["WebAppConnString"].ToString();
+                    conn = new MySql.Data.MySqlClient.MySqlConnection(connString);
+                    conn.Open();
+                    query = "";
+                    query = "INSERT INTO adm_users_table (name, password) values('" + name.Text + "','" + password.Text + "')";
+                    cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn);
 
-                reader = cmd.ExecuteReader();
+                    reader = cmd.ExecuteReader();
 
-                reader.Close();
-                conn.Close();
+                    reader.Close();
+                    conn.Close();
 
-                Response.Redirect("../Home.aspx", false);
+                    Response.Redirect("../Home.aspx", false);
+                }
             }
         }
     }
